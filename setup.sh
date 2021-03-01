@@ -28,16 +28,17 @@ yes | cp -i -r ./themes $HOME/.config/awesome
 echo ""
 
 # for battery widget
-yes | sudo apt install acpi
+sudo apt -y install acpi
 # for screenshot script
-yes | sudo apt install deepin-screenshot
+sudo apt -y install deepin-screenshot
 # for conky
 #sudo apt install conky
 
 # for screen lock
-yes | apt install i3lock
+sudo apt -y install i3lock
 
 # test configuration
 Xephyr :5 & sleep 1 ; DISPLAY=:5 awesome
 
 # todo: cp conky configuration to $HOME/.config/.conkyrc
+
