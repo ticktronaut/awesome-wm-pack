@@ -14,10 +14,10 @@ esac
 echo
 
 # uncommit this, if you want a backup of your prior awesome configuration
-#echo "backup"
-#mkdir $HOME/.config/awesome_backup
-#mv $HOME/.config/awesome $HOME/.config/awesome_backup/awesome_$(date +"_%Y-%m-%d_%H%M%S")
-#echo ""
+echo "backup"
+mkdir $HOME/.config/awesome_backup
+mv $HOME/.config/awesome $HOME/.config/awesome_backup/awesome_$(date +"_%Y-%m-%d_%H%M%S")
+echo ""
 fi
 
 ./download_wallpapers.sh
@@ -29,8 +29,8 @@ echo ""
 
 # for battery widget
 yes | sudo apt install acpi
-# for screenshot script 
-yes | sudo apt install deepin-screenshot 
+# for screenshot script
+yes | sudo apt install deepin-screenshot
 # for conky
 #sudo apt install conky
 
