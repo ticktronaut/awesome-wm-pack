@@ -627,3 +627,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 -- awful.spawn.single_instance({'compton -b'})
 awful.spawn.once("compton -b")
+awful.spawn.once("nm-applet")
