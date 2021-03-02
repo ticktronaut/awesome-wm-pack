@@ -37,6 +37,28 @@ sudo apt -y install deepin-screenshot
 # for screen lock
 sudo apt -y install i3lock
 
+# for tdrop
+sudo apt -y install kitty # prefered terminal for tdrop
+sudo cp conf/kitty.conf $HOME/.config/kitty -i
+git clone https://github.com/noctuid/tdrop.git
+cd tdrop
+sudo make install
+cd ..
+sudo rm tdrop -r
+
+# for transparency
+sudo apt -y install compton compton-conf
+#LINE="compton"
+#FILE="/etc/profile"
+#grep -qF "$LINE" "$FILE"  || echo "$LINE" | sudo tee --append "$FILE"
+#LINE="fading = true"
+#FILE="$HOME/.config/compton.conf"
+#touch "$FILE"
+#grep -qF "$LINE" "$FILE"  || echo "$LINE" | sudo tee --append "$FILE"
+
+# alternative to compton: xcompmgr
+#sudo apt -y install xcompmgr
+
 # test configuration
 Xephyr :5 & sleep 1 ; DISPLAY=:5 awesome
 

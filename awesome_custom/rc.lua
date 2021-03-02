@@ -286,7 +286,7 @@ globalkeys = gears.table.join(
 --              {description = "take a screenshot and open file manager", group = "hotkeys"}),
 
     -- Take a screenshot
-    -- sudo apt install deepin-screenshot 
+    -- sudo apt install deepin-screenshot
     awful.key({ "Mod1" }, "p", function() awful.spawn.with_shell("deepin-screenshot -s $HOME/screenshots") end,
               {description = "take a screenshot", group = "hotkeys"}),
     -- Take a screenshot and open nautilus
@@ -296,6 +296,10 @@ globalkeys = gears.table.join(
     -- lock screen
     awful.key({ "Mod1", "Control" }, "l", function () awful.spawn.with_shell("i3lock -c 474A51 -i $HOME/.config/awesome/themes/tick/lockscreen/wallpaper.png; xset dpms force off") end,
               {description = "lock screen", group = "hotkeys"}),
+
+    -- tdrop
+    awful.key({ "Mod1", }, "space", function () awful.spawn.with_shell("tdrop -ma -h 30% -y 0% --name my kitty") end,
+              {description = "drop down terminal", group = "hotkeys"}),
 
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
@@ -621,3 +625,5 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+-- awful.spawn.single_instance({'compton -b'})
+awful.spawn.once("compton -b")
