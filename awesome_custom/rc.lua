@@ -296,13 +296,16 @@ globalkeys = gears.table.join(
     -- lock screen
     awful.key({ "Mod1", "Control" }, "l", function () awful.spawn.with_shell("i3lock -c 474A51 -i $HOME/.config/awesome/themes/tick/lockscreen/wallpaper.png; xset dpms force off") end,
               {description = "lock screen", group = "hotkeys"}),
-
-    -- tdrop
-    awful.key({ "Mod1", }, "space", function () awful.spawn.with_shell("tdrop -ma -h 30% -y 0% --name my kitty") end,
-              {description = "drop down terminal", group = "hotkeys"}),
-
+    -- tdrop - kitty terminal
+    awful.key({ "Mod1"            }, "space", function () awful.spawn.with_shell("tdrop -ma -n term -h 30% -y 0% kitty") end,
+              {description = "toggle drop down terminal", group = "hotkeys"}),
+    -- tdrop - spotify cli tool
+    awful.key({ modkey,            }, "<", function () awful.spawn.with_shell("tdrop -ma -n spotify -w 50% -h 50% -y 25% -x 25% kitty sh -c ncspot") end,
+              {description = "toggle spotify cli tool (ncspot)", group = "none"}), -- this group does not render in key bindings help screen
+    -- help
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
+
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
