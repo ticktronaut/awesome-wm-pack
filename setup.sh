@@ -38,6 +38,7 @@ sudo apt -y install deepin-screenshot
 sudo apt -y install i3lock
 
 # for tdrop
+sudo apt install xdotool
 sudo apt -y install kitty # prefered terminal for tdrop
 sudo cp conf/kitty.conf $HOME/.config/kitty/kitty.conf -i
 git clone https://github.com/noctuid/tdrop.git
