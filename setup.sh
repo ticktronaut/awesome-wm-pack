@@ -27,6 +27,9 @@ yes | cp -i -r ./awesome_custom $HOME/.config/awesome # do custom configuration
 yes | cp -i -r ./themes $HOME/.config/awesome
 echo ""
 
+# for terminal emulator
+sudo apt -y instal gnome-terminal
+
 # for battery widget
 sudo apt -y install acpi
 # for screenshot script
